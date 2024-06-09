@@ -23,7 +23,7 @@ func dfs(mat [][]int, rows int, cols int, target int) {
 	vis := make([][]int, rows)
 	for i:=0; i<rows; i++ {
 		vis[i]=make([]int, cols)
-		for j:=0; j<=cols; j++ {
+		for j:=0; j<cols; j++ {
 			vis[i][j]=0
 		}
 	}
@@ -38,7 +38,7 @@ func dfs(mat [][]int, rows int, cols int, target int) {
 			}
 		}
 	}
-	fmt.Print("\nPath does not exist")
+	fmt.Print("\nElement does not exist")
 }
 
 func main() {
