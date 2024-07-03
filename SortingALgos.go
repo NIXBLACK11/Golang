@@ -48,6 +48,63 @@ func selectionSort(arr []int, n int) {
 	}
 }
 
+func merger(arr[] int, l int, m int, r int) {
+	n1:=m-l+1
+	n2:=r-m
+
+	L:=make([]int, n1)
+	R:=make([]int, n2)
+
+	for i:=0;i<n1;i++ {
+		L[i] = arr[l+i]
+	}
+
+	for j:=0;j<n2;j++ {
+		R[j] = arr[m+j+1]
+	}
+
+	i:=0
+	j:= 0
+	k:=l
+	for i<n1 && j<n2 {
+		if L[i]<R[j] {
+			arr[k] = L[i]
+			k++
+			i++
+		} else {
+			arr[k] = R[j]
+			k++
+			j++
+		}
+	}
+
+	for i<n1 {
+		arr[k] = L[i]
+		i++
+		k++
+	}
+
+	for j<n2 {
+		arr[k] = R[j]
+		j++
+		k++
+	}
+
+}
+
+func mergeSort(arr[] int, l int, r int) {
+	if(l<r) {
+		m:= l+(r-l)/2
+		mergeSort(arr, l, m)
+		mergeSort(arr, m+1, r)
+		merger(arr, l, m, r)
+	}
+}
+
+func mergeSortCaller(arr []int, n int) {
+	mergeSort(arr, 0, n-1)
+}
+
 func main() {
 	var n , algo int
 	fmt.Println("Enter the size of the array:")
@@ -60,13 +117,15 @@ func main() {
 	}
 	
 	for {
-		fmt.Println("Enter the sorting algorithm to apply:\n1 for bubble sort\n2 for selection sort\n10 to exit!")
+		fmt.Println("Enter the sorting algorithm to apply:\n1 for bubble sort\n2 for selection sort\n3 for merge sort\n10 to exit!")
 		fmt.Scan(&algo)
 		switch algo {
 		case 1:
 			measureExecutionTime("Bubble Sort", bubbleSort, arr, n)
 		case 2:
 			measureExecutionTime("Selection Sort", selectionSort, arr, n)
+		case 3:
+			measureExecutionTime("Merge Sort", mergeSortCaller, arr, n)
 		case 10:
 			break
 		default:
