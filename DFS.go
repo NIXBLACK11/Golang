@@ -41,29 +41,29 @@ func dfs(mat [][]int, rows int, cols int, target int) {
 	fmt.Print("\nElement does not exist")
 }
 
-func main() {
-	var rows, cols, target int
-	fmt.Print("\nEnter the no. of rows:")
-	fmt.Scan(&rows)
-	fmt.Print("\nEnter the no. of cols:")
-	fmt.Scan(&cols)
+// func main() {
+// 	var rows, cols, target int
+// 	fmt.Print("\nEnter the no. of rows:")
+// 	fmt.Scan(&rows)
+// 	fmt.Print("\nEnter the no. of cols:")
+// 	fmt.Scan(&cols)
 
-	mat := make([][]int, rows)
+// 	mat := make([][]int, rows)
 
-	for i:=0; i<rows; i++ {
-		mat[i] = make([]int, cols)
-	}
+// 	for i:=0; i<rows; i++ {
+// 		mat[i] = make([]int, cols)
+// 	}
 
-	fmt.Print("\nEnter the matrix:")
-	for i:=0; i<rows; i++ {
-		for j:=0; j<cols; j++ {
-			fmt.Scan(&mat[i][j])
-		}
-	}
+// 	fmt.Print("\nEnter the matrix:")
+// 	for i:=0; i<rows; i++ {
+// 		for j:=0; j<cols; j++ {
+// 			fmt.Scan(&mat[i][j])
+// 		}
+// 	}
 
-	fmt.Print("\nEnter the target:")
-	fmt.Scan(&target)
+// 	fmt.Print("\nEnter the target:")
+// 	fmt.Scan(&target)
 
-	dfs(mat, rows, cols, target)
-}
+// 	dfs(mat, rows, cols, target)
+// }
 
