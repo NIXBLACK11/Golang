@@ -105,32 +105,32 @@ func mergeSortCaller(arr []int, n int) {
 	mergeSort(arr, 0, n-1)
 }
 
-func main() {
-	var n , algo int
-	fmt.Println("Enter the size of the array:")
-	fmt.Scan(&n)
+// func main() {
+// 	var n , algo int
+// 	fmt.Println("Enter the size of the array:")
+// 	fmt.Scan(&n)
 
-	fmt.Println("Enter the values:")
-	arr := make([]int, n)
-	for i := 0; i < n; i++ {
-		fmt.Scan(&arr[i])
-	}
+// 	fmt.Println("Enter the values:")
+// 	arr := make([]int, n)
+// 	for i := 0; i < n; i++ {
+// 		fmt.Scan(&arr[i])
+// 	}
 	
-	for {
-		fmt.Println("Enter the sorting algorithm to apply:\n1 for bubble sort\n2 for selection sort\n3 for merge sort\n10 to exit!")
-		fmt.Scan(&algo)
-		switch algo {
-		case 1:
-			measureExecutionTime("Bubble Sort", bubbleSort, arr, n)
-		case 2:
-			measureExecutionTime("Selection Sort", selectionSort, arr, n)
-		case 3:
-			measureExecutionTime("Merge Sort", mergeSortCaller, arr, n)
-		case 10:
-			break
-		default:
-			fmt.Println("Invalid input")
-		}
-		printArr(arr, n)
-	}
-}
+// 	for {
+// 		fmt.Println("Enter the sorting algorithm to apply:\n1 for bubble sort\n2 for selection sort\n3 for merge sort\n10 to exit!")
+// 		fmt.Scan(&algo)
+// 		switch algo {
+// 		case 1:
+// 			measureExecutionTime("Bubble Sort", bubbleSort, arr, n)
+// 		case 2:
+// 			measureExecutionTime("Selection Sort", selectionSort, arr, n)
+// 		case 3:
+// 			measureExecutionTime("Merge Sort", mergeSortCaller, arr, n)
+// 		case 10:
+// 			break
+// 		default:
+// 			fmt.Println("Invalid input")
+// 		}
+// 		printArr(arr, n)
+// 	}
+// }
