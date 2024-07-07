@@ -24,12 +24,12 @@ func (st *Stack) IsEmpty() bool {
 	return len(*st) == 0
 }
 
-func main() {
-	stack := Stack{}
-	stack.Push(1)
-	stack.Push(2)
-	stack.Push(3)
-	fmt.Println(stack.Pop())
-	fmt.Println(stack.Pop())
-	fmt.Println(stack.Pop())
-}
+// func main() {
+// 	stack := Stack{}
+// 	stack.Push(1)
+// 	stack.Push(2)
+// 	stack.Push(3)
+// 	fmt.Println(stack.Pop())
+// 	fmt.Println(stack.Pop())
+// 	fmt.Println(stack.Pop())
+// }
