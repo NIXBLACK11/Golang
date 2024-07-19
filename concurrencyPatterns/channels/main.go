@@ -15,6 +15,10 @@ func someFunc() {
 
 func main() {
 	
+	// communication is synchronous
+
+	// This would create a unbuffered channel
+
 	// myChannel := make(chan string)
 	// go func ()  {
 	// 	myChannel <- "data"
