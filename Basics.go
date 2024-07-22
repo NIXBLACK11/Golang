@@ -1,9 +1,7 @@
-// package main
-
-// import (
+// package main 
+// import ( 
 // 	"fmt"
-// )
-
+// ) 
 // func main() {
 // 	var n int
 // 	fmt.Println("Enter the size of the array:")
