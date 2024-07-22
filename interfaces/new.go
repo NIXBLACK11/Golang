@@ -11,6 +11,18 @@ type shape interface {
 	Perimeter() float64
 }
 
+func typeAssertion(sh shape) {
+	c, ok := sh.(circle)
+	if ok {
+		fmt.Println(fmt.Sprintf("This is a circle with radius: %v", c.Radius))
+	}
+
+	r, ok := sh.(rect)
+	if ok {
+		fmt.Println(fmt.Sprintf("This is a rectangle with width: %v and height: %v", r.Height, r.Width))
+	}
+}
+
 func printAreaPerimeter(sh shape) {
 	msg := fmt.Sprintf("Area:%v\nPerimeter:%v", sh.Area(), sh.Perimeter())
 	fmt.Println(msg)
@@ -33,7 +45,6 @@ func (r rect) Perimeter() float64 {
 	return float64(2*(r.Height*r.Width))
 }
 
-
 func (c circle) Area() float64 {
 	return float64(math.Pi * math.Pow(float64(c.Radius), 2.0))
 }
@@ -54,4 +65,7 @@ func main() {
 	
 	printAreaPerimeter(r)
 	printAreaPerimeter(c)
+
+	typeAssertion(r)
+	typeAssertion(c)
 }

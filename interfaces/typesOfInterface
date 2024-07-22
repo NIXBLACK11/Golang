@@ -1,0 +1,3 @@
+type Copier interface {
+    Copy(sourcefile string, destfile string) (success bool)
+}
