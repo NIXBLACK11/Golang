@@ -14,7 +14,7 @@ func NewApplication(db dbcontract) *Application {
 	return &Application{db: db}
 }
 
-func main() {
-	db, err := mysqldb.New()
-	app := NewApplication(db)
-}
+// func main() {
+// 	db, err := mysqldb.New()
+// 	app := NewApplication(db)
+// }
