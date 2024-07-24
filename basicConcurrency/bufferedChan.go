@@ -36,7 +36,7 @@ func main() {
 	// 	return
 	// }
 
-	// Select
+	// Selectf
 	emailChannel := make(chan string)
 	smsChannel := make(chan string)
 
@@ -64,4 +64,8 @@ func main() {
 			fmt.Println(sms)
 		}
 	}
+
+	// to use channels as read-only ch <-chan string
+
+	// to use channels as write-only ch chan<- string
 }

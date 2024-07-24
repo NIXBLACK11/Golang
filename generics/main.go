@@ -11,9 +11,18 @@ func sum[T Number](numbers []T) T {
 
 	for i := range numbers {
 		result += numbers[i]
-	}
+	} 
 
 	return result
+}
+
+func getLast[T any](numbers []T) T {
+	if len(numbers) == 0 {
+		var zeroVal T
+		return zeroVal
+	}
+
+	return numbers[len(numbers)-1]
 }
 
 func main() {
