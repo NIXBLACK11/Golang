@@ -10,14 +10,14 @@ func testFunc(channel chan int) {
 	channel <- 69
 }
 
-func main() {
-	// ch := make(chan int)
-	// ch <- 69
-	// will wait until someone reads from the channel
-	// v := <-ch
+// func main() {
+// 	// ch := make(chan int)
+// 	// ch <- 69
+// 	// will wait until someone reads from the channel
+// 	// v := <-ch
 
-	channel := make(chan int)
-	go testFunc(channel)
-	value := <-channel
-	fmt.Println(value)
-}
+// 	channel := make(chan int)
+// 	go testFunc(channel)
+// 	value := <-channel
+// 	fmt.Println(value)
+// }
