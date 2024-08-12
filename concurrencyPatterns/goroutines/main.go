@@ -9,7 +9,7 @@ func someFunc(num string) {
 	fmt.Println(num)
 }
 
-func main() {
+func main1() {
 	// Asynchronous 
 
 	go someFunc("1")
