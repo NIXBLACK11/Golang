@@ -21,6 +21,7 @@ func messageOperate(messages chan string, message string) {
 }
 
 func main() {
+	/*
 	// Basics of channel
 	message:=make(chan string)
 
@@ -41,4 +42,42 @@ func main() {
 	fmt.Println(<-messages, " message received!!")
 	fmt.Println(<-messages, " message received!!")
 	fmt.Println(<-messages, " message received!!")
+
+	// Select statement in channels
+	c1 := make(chan string)
+	c2 := make(chan string)
+
+	go func() {
+		time.Sleep(1 * time.Second)
+		c1<-"one"
+	} ()
+
+	go func() {
+		time.Sleep(1 * time.Second)
+		c2<-"two"
+	} ()
+
+	// waits for one of the channels to return
+	select {
+	case msg1 := <- c1:
+		fmt.Println("received", msg1)
+	case msg2 := <- c2:
+		fmt.Println("received", msg2)
+	}
+
+	// to get from both
+	for i:=0;i<2;i++ {
+		select {
+		case msg1 := <- c1:
+			fmt.Println("received", msg1)
+		case msg2 := <- c2:
+			fmt.Println("received", msg2)
+		}
+	}
+
+	//simply
+	fmt.Println("received", <-c1)
+	fmt.Println("received", <-c2)
+	*/
+	
 }

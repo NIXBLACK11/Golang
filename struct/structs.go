@@ -1,9 +1,9 @@
 package main
 
 type car struct {
-	Make string
+	Make   string
 	Height int
-	Wheel wheel
+	Wheel  wheel
 }
 
 type wheel struct {
