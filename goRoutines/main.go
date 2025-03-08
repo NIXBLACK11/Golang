@@ -79,5 +79,4 @@ func main() {
 	fmt.Println("received", <-c1)
 	fmt.Println("received", <-c2)
 	*/
-	
 }
