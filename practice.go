@@ -1,14 +1,12 @@
 package main
-import {
-	"fmt"
-}
+import "fmt"
 
-func goroutine {
+func goroutine() {
 	for i:=0;i<10;i++ {
 		fmt.Printf("%d", i)
 	}
 }
 
-func main {
+func main() {
 	go goroutine();
 }
