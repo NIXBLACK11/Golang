@@ -9,6 +9,4 @@ func testSum(t *testing.T) {
 
 	// To fail with a message
 	t.Fatalf("failed")
-
-	
 }
