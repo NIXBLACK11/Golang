@@ -363,3 +363,49 @@ https://chatgpt.com/c/67c916f4-7a10-800b-905e-9be3223c2717
 
 
 https://x.com/mdjunaidap/status/1675377879662886912
+
+
+## Errors vs Panic
+In Golang, `panic` and `errors.New` serve different purposes:
+
+### 1. `panic`
+- Used for unrecoverable errors that should immediately stop program execution.
+- Typically used for critical failures, like accessing an out-of-bounds index in a slice or encountering an unexpected condition in a low-level function.
+- Can be recovered using `recover()`, but this is generally discouraged except in very specific cases (like middleware in a web server).
+
+Example:
+```go
+func divide(a, b int) int {
+    if b == 0 {
+        panic("division by zero")
+    }
+    return a / b
+}
+```
+
+### 2. `errors.New`
+- Used for returning errors in a controlled manner, allowing the caller to handle them properly.
+- It does not stop execution; instead, it returns an error value that can be checked and handled.
+- Preferred for expected failures, such as invalid input or external resource issues.
+
+Example:
+```go
+import "errors"
+
+func divide(a, b int) (int, error) {
+    if b == 0 {
+        return 0, errors.New("division by zero")
+    }
+    return a / b, nil
+}
+```
+
+### **Which is Preferred?**
+✅ **Use `errors.New` (or `fmt.Errorf`, `errors.Wrap`, etc.)** when the error is expected and should be handled by the caller.  
+❌ **Avoid `panic` unless it's an exceptional, unrecoverable scenario** where the program cannot continue safely.
+
+#### **General Rule:**
+- **Use `panic`** for programming errors or fatal conditions (e.g., corrupted memory, unexpected nil pointers).
+- **Use `errors.New`** for expected failures (e.g., invalid user input, failed DB connection).
+
+For robust applications, **handling errors gracefully is always preferred** over panicking. 🚀
